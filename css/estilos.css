@@ -1,0 +1,183 @@
+/* Colores del diseño lab. */
+:root {
+  --naranja: #ff4a24;
+  --negro: #111;
+  --gris: #f2f2f2;
+}
+
+body {
+  background: var(--gris);
+  color: var(--negro);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Logo grande */
+.logo {
+  font-size: 7rem;
+  font-weight: 800;
+  letter-spacing: -4px;
+  animation: aparecer 1.2s ease;
+}
+
+/* Animacion 1: el logo aparece */
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.titulo {
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--negro);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+/* Hover 1: los enlaces cambian a naranja */
+a:hover {
+  color: var(--naranja);
+}
+
+.menu a {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.vertical-texto {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.numero {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+/* Bloque naranja detras de la chaqueta */
+.bloque-naranja {
+  position: relative;
+  background: var(--naranja);
+  padding: 20px 20px 0 20px;
+  overflow: hidden;
+}
+
+.bloque-naranja img {
+  display: block;
+  transition: transform 0.5s;
+}
+
+/* Hover 2: la imagen del hero se agranda */
+.bloque-naranja:hover img {
+  transform: scale(1.04);
+}
+
+.flecha {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--negro);
+  color: white;
+  padding: 15px 20px;
+  transition: background 0.3s;
+}
+
+.flecha:hover {
+  background: white;
+  color: var(--naranja);
+}
+
+/* Carrusel */
+.swiper-slide img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Tarjetas de productos */
+.tarjeta {
+  background: white;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover 3: la tarjeta sube y tiene sombra */
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.precio {
+  color: var(--naranja);
+  font-weight: 700;
+}
+
+.coleccion {
+  border-left: 5px solid var(--naranja);
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.guante {
+  max-height: 300px;
+  transition: transform 0.4s;
+}
+
+/* Hover 4: el guante gira un poco */
+.guante:hover {
+  transform: rotate(5deg);
+}
+
+/* Hover 5: botones */
+.btn-dark {
+  border-radius: 0;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.btn-dark:hover {
+  background: var(--naranja);
+  border-color: var(--naranja);
+}
+
+/* Boton flotante de WhatsApp */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  color: white;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: latido 2s infinite;
+}
+
+/* Animacion 2: el boton de WhatsApp late */
+@keyframes latido {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+.whatsapp:hover {
+  color: white;
+  background: #1ebe57;
+}
+
+/* Responsive: en celular se achica el logo */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 4.5rem;
+  }
+  .swiper-slide img {
+    height: 200px;
+  }
+}
